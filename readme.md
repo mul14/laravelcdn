@@ -16,7 +16,7 @@ And then it allows them to switch between the local and the online version of th
 This project has been forked from https://github.com/Vinelab/cdn. All credit for the original work goes there.
 
 #### Laravel Support
-- This fork supports Laravel 5.2 up to an including Laravel 5.5 (`master`).
+- This fork supports Laravel 5 and 6.
 - Laravel 5.5 is supported, as is package auto-discovery.
 
 ## Highlights
@@ -35,13 +35,28 @@ This project has been forked from https://github.com/Vinelab/cdn. All credit for
 
 ## Installation
 
+### Before you run composer
+
+Add custom repository in your `composer.json`. More information, check the docs https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository
+
+```json
+"repositories": [
+  {
+    "type": "github",
+    "url": "https://github.com/mul14/laravelcdn"
+  }
+]
+```
+
 #### Via Composer
 
 Require `publiux/laravelcdn` in your project:
 
 ```bash
-composer require "publiux/laravelcdn:~2.0"
+composer require "publiux/laravelcdn"
 ```
+
+> Because we already setup custom repository, it will install package from https://github.com/mul14/laravelcdn instead of https://github.com/publiux/laravelcdn.
 
 *If you are using Laravel 5.4 or below, you need to register the service provider:*
 
